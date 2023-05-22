@@ -53,7 +53,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: CustomColors.firebaseNavy,
-        title: const AppBarTitle(),
+        title: AppBarTitle(),
       ),
       body: SafeArea(
         child: Padding(
@@ -65,7 +65,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Row(),
+              Row(),
               const SizedBox(height: 16.0),
               const Text(
                 'Hello',
