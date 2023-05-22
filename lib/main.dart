@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 import 'screens/sign_in_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: FirebaseOptions(
+    options: const FirebaseOptions(
     apiKey: 'AIzaSyAbSqVIMLRP4MRQ1DOkM22yl-1mMsRw2Sc',
     appId: '1:479272309580:android:560531ea8e81dfd024f5e9',
     messagingSenderId: '479272309580',
@@ -15,10 +14,12 @@ void main() async {
     authDomain: 'job-vacancy-b393a.firebaseapp.com'
   ),
   );
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.indigo,
         brightness: Brightness.dark,
       ),
-      home: SignInScreen(),
+      home: const SignInScreen(),
     );
   }
 }

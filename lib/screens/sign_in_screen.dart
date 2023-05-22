@@ -4,6 +4,8 @@ import 'package:job_vacancy/utils/authentication.dart';
 import 'package:job_vacancy/widgets/google_sign_in_button.dart';
 
 class SignInScreen extends StatefulWidget {
+  const SignInScreen({super.key});
+
   @override
   _SignInScreenState createState() => _SignInScreenState();
 }
@@ -23,7 +25,7 @@ class _SignInScreenState extends State<SignInScreen> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Row(),
+              const Row(),
               Expanded(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -36,15 +38,15 @@ class _SignInScreenState extends State<SignInScreen> {
                         height: 160,
                       ),
                     ),
-                    SizedBox(height: 20),
-                    Text(
+                    const SizedBox(height: 20),
+                    const Text(
                       'FlutterFire',
                       style: TextStyle(
                         color: CustomColors.firebaseYellow,
                         fontSize: 40,
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Authentication',
                       style: TextStyle(
                         color: CustomColors.firebaseOrange,
@@ -59,11 +61,11 @@ class _SignInScreenState extends State<SignInScreen> {
                 builder: (context, snapshot) {
                   if (snapshot.hasError) {
                     print(snapshot.error);
-                    return Text('Error initializing Firebase');
+                    return const Text('Error initializing Firebase');
                   } else if (snapshot.connectionState == ConnectionState.done) {
-                    return GoogleSignInButton();
+                    return const GoogleSignInButton();
                   }
-                  return CircularProgressIndicator(
+                  return const CircularProgressIndicator(
                     valueColor: AlwaysStoppedAnimation<Color>(
                       CustomColors.firebaseOrange,
                     ),

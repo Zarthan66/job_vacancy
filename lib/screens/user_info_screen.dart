@@ -22,9 +22,9 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
 
   Route _routeToSignInScreen() {
     return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => SignInScreen(),
+      pageBuilder: (context, animation, secondaryAnimation) => const SignInScreen(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        var begin = Offset(-1.0, 0.0);
+        var begin = const Offset(-1.0, 0.0);
         var end = Offset.zero;
         var curve = Curves.ease;
 
@@ -53,7 +53,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: CustomColors.firebaseNavy,
-        title: AppBarTitle(),
+        title: const AppBarTitle(),
       ),
       body: SafeArea(
         child: Padding(
@@ -65,33 +65,33 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(),
-              SizedBox(height: 16.0),
-              Text(
+              const Row(),
+              const SizedBox(height: 16.0),
+              const Text(
                 'Hello',
                 style: TextStyle(
                   color: CustomColors.firebaseGrey,
                   fontSize: 26,
                 ),
               ),
-              SizedBox(height: 8.0),
+              const SizedBox(height: 8.0),
               Text(
                 _user.displayName!,
-                style: TextStyle(
+                style: const TextStyle(
                   color: CustomColors.firebaseYellow,
                   fontSize: 26,
                 ),
               ),
-              SizedBox(height: 8.0),
+              const SizedBox(height: 8.0),
               Text(
                 '( ${_user.email!} )',
-                style: TextStyle(
+                style: const TextStyle(
                   color: CustomColors.firebaseOrange,
                   fontSize: 20,
                   letterSpacing: 0.5,
                 ),
               ),
-              SizedBox(height: 24.0),
+              const SizedBox(height: 24.0),
               Text(
                 'You are now signed in using your Google account. To sign out of your account click the "Sign Out" button below.',
                 style: TextStyle(
@@ -99,9 +99,9 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                     fontSize: 14,
                     letterSpacing: 0.2),
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               _isSigningOut
-                  ? CircularProgressIndicator(
+                  ? const CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                     )
                   : ElevatedButton(
@@ -126,7 +126,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                         Navigator.of(context)
                             .pushReplacement(_routeToSignInScreen());
                       },
-                      child: Padding(
+                      child: const Padding(
                         padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
                         child: Text(
                           'Sign Out',
